@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,34 +6,55 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 14% 20%;
-
+    --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
-    --card-foreground: 222 14% 20%;
-
+    --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 14% 20%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 16%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 169.5 77.8% 35.3%;
+    --sidebar-primary-foreground: 0 0% 95%;
+    --sidebar-accent: 0 0% 22%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 26%;
+    --sidebar-ring: 169.5 77.8% 35.3%;
+  }
 
-    --primary: 202 80% 55%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 202 80% 95%;
-    --secondary-foreground: 202 80% 45%;
-
-    --muted: 210 20% 97%;
-    --muted-foreground: 220 8% 56%;
-
-    --accent: 340 70% 75%;
-    --accent-foreground: 340 85% 30%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 202 80% 55%;
-
-    --radius: 0.75rem;
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
   }
 }
 
@@ -43,139 +62,58 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground font-roboto antialiased;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-roboto font-bold;
-  }
-  
-  .accent-text {
-    @apply font-playfair;
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-@layer components {
-  .telegram-header {
-    @apply bg-telegram-blue text-white py-3 px-4 flex items-center justify-between rounded-t-lg;
-  }
-  
-  .telegram-chat-container {
-    @apply bg-telegram-gray p-4 overflow-y-auto rounded-b-lg;
-  }
-  
-  .telegram-message-bot {
-    @apply bg-white rounded-2xl p-3 max-w-[80%] mb-3 shadow-sm animate-fade-in;
-  }
-  
-  .telegram-message-user {
-    @apply bg-telegram-lightBlue rounded-2xl p-3 max-w-[80%] mb-3 ml-auto shadow-sm animate-fade-in;
-  }
-  
-  .telegram-keyboard {
-    @apply flex flex-wrap gap-2 mt-2;
-  }
-  
-  .telegram-keyboard-button {
-    @apply bg-white hover:bg-gray-100 text-telegram-blue px-4 py-2 rounded-md text-sm font-medium transition-colors border border-gray-200;
-  }
-  
-  .dashboard-card {
-    @apply bg-white rounded-xl p-5 shadow-md border border-gray-100 animate-scale-in;
-  }
-  
-  .dashboard-card-title {
-    @apply text-lg font-bold mb-3 flex items-center gap-2;
-  }
-  
-  .progress-bar {
-    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
-  }
-  
-  .progress-bar-fill {
-    @apply h-full bg-telegram-blue rounded-full transition-all duration-500;
-  }
-  
-  .location-card {
-    @apply border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow;
-  }
-  
-  .hover-scale {
-    @apply transition-transform duration-200 hover:scale-[1.02];
-  }
-  
-  .trend-card {
-    @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;
-  }
-  
-  .todo-item {
-    @apply flex items-center gap-3 py-2 border-b border-gray-100 last:border-0;
-  }
-  
-  .todo-category {
-    @apply text-xs font-medium py-1 px-2 rounded-full;
-  }
-  
-  .guest-status-dot {
-    @apply w-2 h-2 rounded-full;
-  }
+/* Telegram Chat Styling */
+.telegram-header {
+  @apply bg-telegram-blue text-white p-4 flex justify-between items-center;
 }
 
-/* Timeline styling */
-.timeline-container {
-  @apply relative;
+.telegram-chat-container {
+  @apply bg-gray-100 p-4 overflow-y-auto;
 }
 
-.timeline-line {
-  @apply absolute left-4 top-0 w-0.5 h-full bg-gray-200;
+.telegram-message-bot {
+  @apply bg-white p-3 rounded-lg shadow-sm mb-4 max-w-[80%];
 }
 
-.timeline-item {
-  @apply pl-12 relative pb-5;
+.telegram-message-user {
+  @apply bg-telegram-lightBlue text-white p-3 rounded-lg shadow-sm mb-4 ml-auto max-w-[80%];
 }
 
-.timeline-item::before {
-  content: '';
-  @apply absolute left-3.5 top-1 w-3 h-3 rounded-full bg-telegram-blue -ml-1.5;
+/* Dashboard Components */
+.dashboard-card {
+  @apply bg-white rounded-lg shadow-sm p-4 border border-gray-100;
 }
 
-.timeline-item-completed::before {
-  @apply bg-green-500;
+.dashboard-card-title {
+  @apply flex items-center gap-2 font-medium pb-3 mb-3 border-b text-gray-700;
 }
 
-/* Glassmorphism elements */
-.glass-card {
-  @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-lg;
+.progress-bar {
+  @apply w-full h-2 bg-gray-100 rounded-full overflow-hidden;
 }
 
-.glass-button {
-  @apply backdrop-blur-md bg-white/30 hover:bg-white/40 transition-all border border-white/20 shadow-sm;
+.progress-bar-fill {
+  @apply h-full bg-telegram-blue rounded-full;
 }
 
-/* Tooltip styles */
-.tooltip {
-  @apply relative inline-block;
+.todo-item {
+  @apply flex items-start gap-3 p-2 hover:bg-gray-50 rounded-md transition-colors;
 }
 
-.tooltip:hover .tooltip-text {
-  @apply opacity-100 visible;
+.trend-card {
+  @apply bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100;
 }
 
-.tooltip-text {
-  @apply absolute z-10 p-2 text-sm bg-gray-800 text-white rounded shadow-lg opacity-0 invisible transition-opacity duration-200;
+.location-card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  @apply w-2;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+.hover-scale {
+  @apply transition-transform hover:scale-[1.02] cursor-pointer;
 }
