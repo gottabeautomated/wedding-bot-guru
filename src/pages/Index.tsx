@@ -11,7 +11,7 @@ export default function Index() {
       <Tabs defaultValue={viewMode} onValueChange={value => setViewMode(value as 'telegram' | 'dashboard')}>
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2 font-playfair">
-            <span className="text-telegram-blue">Hochzeit</span>Impuls
+            <span className="text-telegram-blue">Hochzeits</span>Impuls
           </h1>
           <p className="text-gray-600 mb-6">Dein Helfer und um den schönsten Tag deines Lebens</p>
           
