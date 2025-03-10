@@ -272,22 +272,29 @@ export const DashboardView = () => {
   return (
     <div className="w-full max-w-4xl mx-auto p-6">
       <div className="mb-8 text-center">
-        <motion.h1 
-          className="text-3xl font-bold mb-2"
+        <motion.div
+          className="mb-4 p-6 rounded-lg bg-gradient-to-r from-telegram-blue/10 to-telegram-blue/5 border border-telegram-blue/20"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="font-playfair text-telegram-blue">Nina & Christoph</span>
-        </motion.h1>
-        <motion.p 
-          className="text-gray-600"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Hochzeit am 19. Juli 2025
-        </motion.p>
+          <motion.h1 
+            className="text-4xl font-bold mb-3"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="font-playfair bg-gradient-to-r from-telegram-blue to-telegram-blue/80 bg-clip-text text-transparent">Nina & Christoph</span>
+          </motion.h1>
+          <motion.p 
+            className="text-xl text-gray-700 font-medium"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Hochzeit am <span className="text-telegram-blue font-semibold">19. Juli 2025</span>
+          </motion.p>
+        </motion.div>
       </div>
       
       <DashboardTabs activeTab={activeTab} setActiveTab={setActiveTab} />
